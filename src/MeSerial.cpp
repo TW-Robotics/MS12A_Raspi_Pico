@@ -36,7 +36,7 @@ size_t MeSerial::write(uint8_t byte)
 
 int16_t MeSerial::read()
 {
-  uint8_t* data = nullptr;
+  uint16_t* data = nullptr;
   //uart_read_blocking(UART_ID,data,8); Falsch
   data* = uart_getc(UART_ID);
 	
