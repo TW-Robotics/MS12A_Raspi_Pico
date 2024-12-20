@@ -30,14 +30,15 @@ void MeSerial::end()
 size_t MeSerial::write(uint8_t byte)
 {
   
-  uart_write_blocking(UART_ID,&byte,8);	//Könnte auch 7 bit sein
+  uart_write_blocking(UART_ID,&byte,1);	//Schreiben von 1 Byte
   return 0;
 }
 
 int16_t MeSerial::read()
 {
   uint8_t* data = nullptr;
-  uart_read_blocking(UART_ID,data,8);
+  //uart_read_blocking(UART_ID,data,8); Falsch
+  data* = uart_getc(UART_ID);
 	
   return *data;
 }
